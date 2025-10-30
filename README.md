@@ -93,8 +93,8 @@ The latest version will always be available on this page.
 
 ### 8. Contact Us
 If you have any questions or concerns, contact us at:  
-📧 **rkdigitallabs@gmail.com**
+📧 **contact.pandadigitallab@gmail.com**
 
 ---
 
-© 2025 RK Digital Labs. All rights reserved.
+© 2025 Panda Digital Labs. All rights reserved.
