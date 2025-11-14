@@ -1,0 +1,32 @@
+{
+  "days": {
+    "2025-01-01": {
+      "caption": "New year, new beginnings! Make it count! 🎉",
+      "templateId": 1
+    },
+    "2025-01-02": {
+      "caption": "Every day is a fresh start. Embrace it! ✨",
+      "templateId": 5
+    },
+    "2025-01-03": {
+      "caption": "Believe in yourself and magic will happen 🌟",
+      "templateId": 7
+    },
+    "2025-01-04": {
+      "caption": "Dream big, work hard, stay focused 💪",
+      "templateId": 10
+    },
+    "2025-01-05": {
+      "caption": "Your vibe attracts your tribe 🔥",
+      "templateId": 2
+    },
+    "2025-01-06": {
+      "caption": "Life is better when you're laughing 😊",
+      "templateId": 1
+    },
+    "2025-01-07": {
+      "caption": "Make today amazing! 🚀",
+      "templateId": 5
+    }
+  }
+}
