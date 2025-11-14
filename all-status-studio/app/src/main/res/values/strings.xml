@@ -39,4 +39,7 @@
     <string name="privacy_policy">Privacy Policy</string>
     <string name="terms_of_service">Terms of Service</string>
     <string name="about">About</string>
+
+    <!-- AdMob -->
+    <string name="ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 </resources>
