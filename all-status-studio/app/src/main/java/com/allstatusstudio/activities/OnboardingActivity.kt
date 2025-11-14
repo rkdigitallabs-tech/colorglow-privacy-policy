@@ -15,7 +15,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class OnboardingActivity : AppCompatActivity() {
 
-    private lateinit:binding binding: ActivityOnboardingBinding
+    private lateinit var binding: ActivityOnboardingBinding
     private val PERMISSION_REQUEST_CODE = 100
 
     private val slides = listOf(

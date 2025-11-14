@@ -13,11 +13,46 @@
         app:titleTextColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnScheduleOnce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Schedule Once"
+            android:layout_marginBottom="8dp"
+            style="@style/Widget.MaterialComponents.Button"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnScheduleDaily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Schedule Daily"
+            android:layout_marginBottom="8dp"
+            style="@style/Widget.MaterialComponents.Button"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnScheduleWeekly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Schedule Weekly"
+            style="@style/Widget.MaterialComponents.Button"/>
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintTop_toBottomOf="@id/buttonLayout"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
