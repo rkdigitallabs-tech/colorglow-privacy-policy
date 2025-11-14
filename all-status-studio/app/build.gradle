@@ -103,7 +103,7 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.19.1'
 
     // FFmpeg Kit for video editing
-    implementation 'com.arthenica:ffmpeg-kit-full:6.0-2'
+    implementation 'com.arthenica:ffmpeg-kit-full:6.0-2.LTS'
 
     // OpenCV for image filters
     implementation 'com.quickbirdstudios:opencv:4.5.3.0'
