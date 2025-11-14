@@ -1,0 +1,74 @@
+{
+  "templates": [
+    {
+      "id": 1,
+      "type": "image",
+      "category": "love",
+      "path": "templates/love1.png",
+      "isPremium": false
+    },
+    {
+      "id": 2,
+      "type": "image",
+      "category": "love",
+      "path": "templates/love2.png",
+      "isPremium": false
+    },
+    {
+      "id": 3,
+      "type": "image",
+      "category": "love",
+      "path": "templates/love3.png",
+      "isPremium": true
+    },
+    {
+      "id": 4,
+      "type": "video",
+      "category": "birthday",
+      "path": "templates/birthday1.mp4",
+      "isPremium": false
+    },
+    {
+      "id": 5,
+      "type": "image",
+      "category": "motivation",
+      "path": "templates/motivation1.png",
+      "isPremium": false
+    },
+    {
+      "id": 6,
+      "type": "image",
+      "category": "motivation",
+      "path": "templates/motivation2.png",
+      "isPremium": true
+    },
+    {
+      "id": 7,
+      "type": "image",
+      "category": "attitude",
+      "path": "templates/attitude1.png",
+      "isPremium": false
+    },
+    {
+      "id": 8,
+      "type": "image",
+      "category": "attitude",
+      "path": "templates/attitude2.png",
+      "isPremium": false
+    },
+    {
+      "id": 9,
+      "type": "video",
+      "category": "festival",
+      "path": "templates/festival1.mp4",
+      "isPremium": true
+    },
+    {
+      "id": 10,
+      "type": "image",
+      "category": "quotes",
+      "path": "templates/quotes1.png",
+      "isPremium": false
+    }
+  ]
+}
