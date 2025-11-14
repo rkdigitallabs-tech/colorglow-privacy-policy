@@ -10,28 +10,119 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/background"
+        app:title="Cleaner"
+        app:navigationIcon="@drawable/ic_back"
         app:titleTextColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <!-- Scan Buttons Section -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardScanOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scan Options"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnScanDuplicates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scan Duplicates"
+                android:textColor="@color/white"
+                android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnScanLargeFiles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scan Large Files"
+                android:textColor="@color/white"
+                android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnScanOldEdits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scan Old Edits"
+                android:textColor="@color/white"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Total Size Display -->
+    <TextView
+        android:id="@+id/tvTotalSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total: 0 MB"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cardScanOptions"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- RecyclerView for Junk Files -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/tvTotalSize"
+        app:layout_constraintBottom_toTopOf="@id/btnCleanAll"/>
+
+    <!-- Clean All Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCleanAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clean All"
+        android:textColor="@color/white"
+        android:layout_margin="16dp"
+        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+    <!-- Empty State -->
     <TextView
         android:id="@+id/emptyView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No items found"
+        android:text="No junk files found"
         android:textColor="@color/white"
+        android:textSize="16sp"
         android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Progress Bar -->
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
