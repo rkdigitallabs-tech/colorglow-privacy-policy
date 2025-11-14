@@ -1,4 +1,65 @@
-# Build Fix Guide - Missing Drawable Resources
+# Build Fix Guide
+
+## Fix #2: Kotlin Version Mismatch (Latest)
+
+### Issue Summary
+
+Build failed with the following errors:
+```
+e: Module was compiled with an incompatible version of Kotlin.
+   The binary version of its metadata is 2.2.0, expected version is 1.9.0.
+
+e: java.lang.IllegalAccessError: class org.jetbrains.kotlin.kapt3.base.javac.KaptJavaCompiler
+   cannot access class com.sun.tools.javac.main.JavaCompiler
+```
+
+Additionally, duplicate native library error:
+```
+2 files found with path 'lib/arm64-v8a/libc++_shared.so'
+```
+
+### Root Cause
+
+1. **Kotlin Version Mismatch**: The project was using Kotlin 1.9.20, but transitive dependencies (especially from newer Android libraries) were compiled with Kotlin 2.2.0, causing metadata incompatibility.
+
+2. **AGP/Gradle Compatibility**: Android Gradle Plugin 8.2.0 with Gradle 8.2 was outdated for the newer dependency versions.
+
+3. **Duplicate Native Libraries**: Both FFmpeg Kit and OpenCV include `libc++_shared.so`, causing merge conflicts.
+
+### Changes Made
+
+**1. Updated Root `build.gradle`:**
+- Android Gradle Plugin: `8.2.0` → `8.5.2`
+- Kotlin version: `1.9.20` → `2.0.21`
+
+**2. Updated `gradle-wrapper.properties`:**
+- Gradle version: `8.2` → `8.7`
+
+**3. Updated App `build.gradle`:**
+- Added `pickFirst` directives for duplicate native libraries in `packagingOptions`
+
+### Verification
+
+After applying these fixes:
+1. Kotlin metadata version compatibility is resolved
+2. KAPT can access Java compiler internals properly
+3. Native library conflicts are resolved by picking the first occurrence
+
+### Build Instructions
+
+```bash
+cd all-status-studio
+
+# Clean build to ensure fresh start
+./gradlew clean
+
+# Build debug APK
+./gradlew assembleDebug
+```
+
+---
+
+## Fix #1: Missing Drawable Resources
 
 ## Issue Summary
 
