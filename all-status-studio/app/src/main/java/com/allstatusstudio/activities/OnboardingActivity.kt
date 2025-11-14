@@ -5,10 +5,16 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.airbnb.lottie.LottieAnimationView
 import com.allstatusstudio.R
 import com.allstatusstudio.databinding.ActivityOnboardingBinding
 import com.google.android.material.tabs.TabLayoutMediator
@@ -146,16 +152,16 @@ class OnboardingActivity : AppCompatActivity() {
     )
 
     inner class OnboardingAdapter(private val slides: List<OnboardingSlide>) :
-        androidx.recyclerview.widget.RecyclerView.Adapter<OnboardingAdapter.ViewHolder>() {
+        RecyclerView.Adapter<OnboardingAdapter.ViewHolder>() {
 
-        inner class ViewHolder(view: android.view.View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
-            val lottieView: com.airbnb.android.lottie.LottieAnimationView = view.findViewById(R.id.lottieAnimation)
-            val title: android.widget.TextView = view.findViewById(R.id.tvTitle)
-            val description: android.widget.TextView = view.findViewById(R.id.tvDescription)
+        inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+            val lottieView: LottieAnimationView = view.findViewById(R.id.lottieAnimation)
+            val title: TextView = view.findViewById(R.id.tvTitle)
+            val description: TextView = view.findViewById(R.id.tvDescription)
         }
 
-        override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): ViewHolder {
-            val view = android.view.LayoutInflater.from(parent.context)
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+            val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_onboarding_slide, parent, false)
             return ViewHolder(view)
         }
