@@ -11,6 +11,11 @@
     <color name="neon_green">#39FF14</color>
     <color name="neon_blue">#4D4DFF</color>
 
+    <!-- Primary/Accent Colors -->
+    <color name="primary">#B026FF</color>
+    <color name="primary_dark">#8000CC</color>
+    <color name="accent">#00F5FF</color>
+
     <!-- Basic Colors -->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
